@@ -1,6 +1,6 @@
 import cv2
 
-camera_port = 1
+camera_port = 0
 ramp_frames = 30
 
 # cv2.namedWindow("preview")
@@ -10,11 +10,11 @@ def get_image():
     retval, im = vc.read()
     return im
 
-# for i in range(ramp_frames):
-#     get_image()
+for i in range(ramp_frames):
+    get_image()
 
 camera_capture = get_image()
-file = "/screenshots/1.png"
+file = "./screenshots/1.png"
 cv2.imwrite(file, camera_capture)
 
 del(vc)
