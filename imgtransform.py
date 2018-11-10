@@ -34,9 +34,9 @@ def transform_img(path):
     for i in range(170, 880, 115):
         for j in range(90, 380, 250):
             if(checkvacancy(i, j, i + 115, j + 250, dilation)):
-                cv2.rectangle(img, (i, j), (i+115, j+250), (0,0,255), 2)
+                cv2.rectangle(img, (i+5, j+5), (i+110, j+245), (0,0,255), 2)
             else:
-                cv2.rectangle(img, (i, j), (i+115, j+250), (0,255,0), 2)
+                cv2.rectangle(img, (i+5, j+5), (i+110, j+245), (0,255,0), 2)
             j += 3
         i += 5
 
