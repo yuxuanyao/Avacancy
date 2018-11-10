@@ -1,4 +1,5 @@
 import cv2
+import imgtransform
 
 camera_port = 0
 ramp_frames = 30
@@ -25,11 +26,12 @@ while rval:
     key = cv2.waitKey(frame_duration)
     frame_count += 1
 
-    if frame_count == 5*fps:
+    if frame_count == 4*fps:
         frame_count = 0
         file = "./screenshots/" + str(file_i) + ".png"
         cv2.imwrite(file, frame)
         file_i += 1
+        imgtransform.transform_img(file)
 
     if key == 27: # exit on ESC
         break
