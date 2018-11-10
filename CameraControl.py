@@ -1,6 +1,6 @@
 import cv2
 
-camera_port = 0
+camera_port = 1
 ramp_frames = 30
 
 cv2.namedWindow("preview")
