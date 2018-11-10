@@ -1,7 +1,9 @@
 import cv2
 
-camera_port = 1
+camera_port = 0
 ramp_frames = 30
+frame_duration = 25
+fps = 1000/frame_duration
 
 cv2.namedWindow("preview")
 vc = cv2.VideoCapture(camera_port)
@@ -15,10 +17,20 @@ if vc.isOpened(): # try to get the first frame
 else:
     rval = False
 
+frame_count = 0
+file_i = 0
 while rval:
     cv2.imshow("preview", frame)
     rval, frame = vc.read()
-    key = cv2.waitKey(1)
+    key = cv2.waitKey(frame_duration)
+    frame_count += 1
+
+    if frame_count == 5*fps:
+        frame_count = 0
+        file = "./screenshots/" + str(file_i) + ".png"
+        cv2.imwrite(file, frame)
+        file_i += 1
+
     if key == 27: # exit on ESC
         break
 
