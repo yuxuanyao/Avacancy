@@ -81,9 +81,9 @@ def checkvacancy(x, y, row, col, img):
 
 
 
-filepath = input("Enter filename: ")
-
-transform_img("resources/" + filepath)
+# filepath = input("Enter filename: ")
+#
+# transform_img("resources/" + filepath)
 
 
 
