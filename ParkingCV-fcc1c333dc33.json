@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "inductive-vista-222105",
+  "private_key_id": "fcc1c333dc338d8c19dfef2ec2a888b82c15e9b1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBzcGbMm69bHr+\nn5g/+qopOr3E4Dr9X6rFkD7jamTVxo36qr2P69wvfiXkAf52W0OgVg6lty2VWtHK\n3fxhLzvlTaAbqxWKa71ma2c1wI5nee3bpB3S2TIquiDOY8JT8F+J9t7JX5Ub8wnn\neXbJjr5tbFRcPWFJ+Je5R1An1e96rYnK+sjIaKULRwD4aKsNg94FyhWVNZF3MUD7\nPEEX1couNbEc7IlRzVpedHONWcnFIpCRLrpMaq0ixALKa7AyZZ99DThh83hT82Ol\nDrv4oq/gE9b/0KRavhhz3/fWNIj8fZLxmHMm9dbhDu7vp55/EP8M/LAKLPp75n2D\n74LK5MfXAgMBAAECggEAUh84g2WG9GBz69I/xxiWIztfb33esT/pEqdRZrdOPCHT\nRt0zzzkQB9XqA2hu5cM9cEMXGNR6jde6nz6ac6n6tOtERYUk7w9BZhVr2iSakzFg\n/5nXA2ICtoVBYoN2NHBeY41HEUid3AaL81iOY9FHUwG864sc3yXmUN3tkru+KxqB\n5mSpaysku1AdaCa5aZjxYv8VnAedN0xXuL/bBnY3zEKAIUoSpaAVSKcohVsI14vY\nzP9u5DgBy9DHGRyE4ZVp4mo5jZqv6XqZlhTQgf+iWJ1ADLTgjiE1NKOQHPlwVt6y\nHbpOrckwH3Yjl6XFjTVuM4HIl7Nvn7/ahPN0oq5JaQKBgQDtrecN1+grE9gKHWIt\niWWLM0wgnpCT/cmLnxrPm8ea2qTEgrSFoXY9HlOr9aQSfp3VGSAgl8Dw8iyleexk\n28Mw8E81wDOnhbYcGEg/Guw7N0lerp9RCJd6FALluwD4K537v08cc+dzikJtPVAv\n8EVO39YlE6l/GWXpERgUDyi+TwKBgQDQvg/yo4ElS7kz6BwUSPAD1IeQ7JXLwWoK\nXwr+ce+a4L0gpsp1cAj9MPgJioEB/8sGLStI1yLfydGvhB1boFxUqCXHFRs3UUZA\nxc+DAwlp5QEz6+kerKn/FOf5SjldpEKz2RSg7gvLPQpJtxXtt3/unP9rQHHtV1M8\nk2ttxftD+QKBgQDUiDvjMhzGYHE/4jSHeaQWjGFXjdLEsxzFQBmuaaNcgoTxv9sC\n33Wmg3bYfsgfTZ9/DX+gBXMfQb7QnazYJ3dsTIbYDq1h8Hv+tWvtGfsBnJd8FfQa\ndu9U144btVPRltcnZVOtoqrls01g94G7zEN9m0SXVPSs1Z4+ge2hCkkpmwKBgEDI\nK4Te726WsJSGXWiCNlLJ+4Sjl92TWgh79JqA256STr+6Y6zMp02EjAXSATWQn/57\nuCoz8jPHm5bABqhv/Rec05SUXUzuoUHq4frDz4EYvCXT+hY1+dAbOd7pBSKlnrnY\nDgnftrNNb0rvUhPjVgXEnZQ4fOLurftnuPhpcBBpAoGBALseQETnITiuIpYgcnE4\ntfBnOZagJNPmxIO8qrd+n3RkvrfwPCIYbj50L/gTeWGjhMZj4LFqP3EaxFbOVFgD\n8G6l7IAryps1nNncjBo4oF+u6bpAY+UOMNB9QyDtxfxYJEdrp9VnbgYC6ITFgIqj\nkNbSNcby+IQpRXd8dNnveNVz\n-----END PRIVATE KEY-----\n",
+  "client_email": "parkingcv@inductive-vista-222105.iam.gserviceaccount.com",
+  "client_id": "108158879690879446183",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/parkingcv%40inductive-vista-222105.iam.gserviceaccount.com"
+}

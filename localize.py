@@ -40,7 +40,7 @@ def localize_objects(path):
         x2 = int(vlist[4] * width)
         y2 = int(vlist[5] * height)
 
-        cv2.rectangle(img, (x1, y1), (x2, y2), (0,0,0), 2)
+        cv2.rectangle(img, (x1, y1), (x2, y2), (0,0,255), 2)
 
     cv2.imwrite("parkinglot.png",img)
 
@@ -49,9 +49,10 @@ def localize_objects(path):
 
     print(vlist)
 
-    
+   
 
-localize_objects("resources/parkingscam.jpg")
+filepath = input("Enter filename: ")
 
+localize_objects("resources/" + filepath)
 
 
