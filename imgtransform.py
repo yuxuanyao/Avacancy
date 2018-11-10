@@ -28,8 +28,16 @@ def transform_img(path):
     # morphological operations to reduce noise
     opening = cv2.morphologyEx(bimg, cv2.MORPH_OPEN, kernel)
     closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
-    erosion = cv2.erode(closing,kernel,iterations = 3)
-    dilation = cv2.dilate(erosion,kernel,iterations = 3)
+    #erosion = cv2.erode(closing,kernel,iterations = 3)
+    dilation = cv2.dilate(closing,kernel,iterations = 5)
+
+
+    #cv2.imshow("opening", opening)
+    #cv2.imshow("closing", closing)
+    #cv2.imshow("erosion", erosion) 
+    #cv2.imshow("dilation", dilation) 
+    #k = cv2.waitKey(0)
+
 
     for i in range(170, 880, 115):
         for j in range(90, 380, 250):
@@ -41,10 +49,8 @@ def transform_img(path):
         i += 5
 
 
+    cv2.imshow("result", img)  
 
-    cv2.imwrite("verynice.png",img)
-
-    cv2.imshow("oof", img)     
 
     k = cv2.waitKey(0) # 0==wait forever
 
