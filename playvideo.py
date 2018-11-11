@@ -56,6 +56,7 @@ def transform_img(img, availability= [[0] * 5 for i in range(4)]):
 
 	cv2.imshow("Label", img)
 	print(availability)
+	return img
 
 while True:
 	cap = cv2.VideoCapture("resources/parking480.mov")
