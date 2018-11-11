@@ -1,6 +1,10 @@
 import numpy as np
 import cv2
 import imgtransform as ti
+from threading import Thread
+
+frame_duration = 25
+fps = 1000/frame_duration
 
 def transform_img(img):
 	# get height and width
@@ -45,15 +49,15 @@ def transform_img(img):
 					j = j_ - int(block*height/2)
 		i += 5
 
-	cv2.imshow("result", img)
+	cv2.imshow("Label", img)
 
 while True:
 	cap = cv2.VideoCapture("resources/parking480.mov")
 
 	ret, frame = cap.read()
-
+	frame_count = 0
+	file_i = 0
 	while(ret):
-
 		# gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 		# top left
@@ -98,9 +102,17 @@ while True:
 		matrix = cv2.getPerspectiveTransform(pts1, pts2)
 
 		result = cv2.warpPerspective(frame, matrix, (maxWidth, maxHeight))
-		transform_img(result)
 
-		cv2.imshow('result', result)
+
+		frame_count += 1
+		if frame_count > fps:
+			# if __name__ == '__main__':
+			# 	Thread(target=transform_img, args=(result, )).start()
+			transform_img(result)
+			file_i += 1
+			frame_count = 0
+
+		cv2.imshow('Pre-label', result)
 		cv2.imshow('frame', frame)
 
 		ret, frame = cap.read()
