@@ -19,7 +19,7 @@ def transform_img(img):
 
 	# Otsu binarization
 	ret, bimg = cv2.threshold(absimg, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-	cv2.imshow('bimg',bimg)
+	#cv2.imshow('bimg',bimg)
 
 	# define kernel for convolution
 	kernel = np.ones((5, 5), np.uint8)
@@ -29,7 +29,7 @@ def transform_img(img):
 	closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 	# erosion = cv2.erode(closing,kernel,iterations = 3)
 	dilation = cv2.dilate(closing, kernel, iterations=3)
-	cv2.imshow("dilation", dilation)
+	#cv2.imshow("dilation", dilation)
 
 	for i in range(0, width, int(width/5)):
 		for block in range(2):
@@ -103,6 +103,7 @@ while True:
 
 		result = cv2.warpPerspective(frame, matrix, (maxWidth, maxHeight))
 
+		cv2.imshow('Pre-label', result)
 
 		frame_count += 1
 		if frame_count > fps:
@@ -112,7 +113,7 @@ while True:
 			file_i += 1
 			frame_count = 0
 
-		cv2.imshow('Pre-label', result)
+		
 		cv2.imshow('frame', frame)
 
 		ret, frame = cap.read()

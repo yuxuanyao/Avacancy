@@ -69,12 +69,12 @@ def checkoccupancy(x, y, row, col, img):
                 white += 1
             total += 1
 
-
+    '''
     print(white)
     print(total)
     print((white/total) > 0.2)
     print(white/total)
-
+    '''
 
     return ((white/total) > 0.2)
 
