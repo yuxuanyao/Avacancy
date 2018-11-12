@@ -6,7 +6,7 @@ from threading import Thread
 frame_duration = 25
 fps = 1000/frame_duration
 
-def transform_img(img):
+def transform_img(img, availability= [[0] * 5 for i in range(4)]):
 	# get height and width
 	height, width, _ = img.shape
 
@@ -19,7 +19,11 @@ def transform_img(img):
 
 	# Otsu binarization
 	ret, bimg = cv2.threshold(absimg, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+<<<<<<< HEAD:scripts/playvideo.py
 	#cv2.imshow('bimg',bimg)
+=======
+	# cv2.imshow('bimg',bimg)
+>>>>>>> fc7ca01caadaa95cb8751bf3bf710ad54a460c55:playvideo.py
 
 	# define kernel for convolution
 	kernel = np.ones((5, 5), np.uint8)
@@ -29,9 +33,15 @@ def transform_img(img):
 	closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 	# erosion = cv2.erode(closing,kernel,iterations = 3)
 	dilation = cv2.dilate(closing, kernel, iterations=3)
+<<<<<<< HEAD:scripts/playvideo.py
 	#cv2.imshow("dilation", dilation)
+=======
+	# cv2.imshow("dilation", dilation)
+>>>>>>> fc7ca01caadaa95cb8751bf3bf710ad54a460c55:playvideo.py
 
+	y = 0
 	for i in range(0, width, int(width/5)):
+		x = 0
 		for block in range(2):
 			j = 0
 			while j < int(height/2):
@@ -43,13 +53,18 @@ def transform_img(img):
 						# cv2.rectangle(img, (i + 5, j_ + 5), (i + int(width/5)-5, j_ + int(height*0.13)-5), (0, 0, 255), 2)
 					else:
 						colour = (0, 255, 0)
+						availability[x][y] = 1
 						# cv2.rectangle(img, (i + 5, j_ + 5), (i + int(width/5)-5, j_ + int(height*0.13)-5), (0, 255, 0), 2)
 					cv2.rectangle(img, (i + 5, j_ + 5), (i + int(width / 5) - 5, j_ + int(height * 0.13) - 5), colour, 2)
 					j_ += int(height * (0.22 + 0.13))
 					j = j_ - int(block*height/2)
+				x += 1
+		y += 1
 		i += 5
 
 	cv2.imshow("Label", img)
+	print(availability)
+	return img
 
 while True:
 	cap = cv2.VideoCapture("resources/parking480.mov")
@@ -70,19 +85,19 @@ while True:
 		br = (560, 330)
 
 		# max width
-		widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-		widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
-		maxWidth = max(int(widthA), int(widthB))
+		# widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+		# widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+		# maxWidth = max(int(widthA), int(widthB))
 
 		# max height
-		heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
-		heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
-		maxHeight = max(int(heightA), int(heightB))
+		# heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+		# heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+		# maxHeight = max(int(heightA), int(heightB))
 
 		t1 = (0, 0)
-		t2 = (maxWidth, 0)
-		t3 = (0, maxHeight)
-		t4 = (maxWidth, maxHeight)
+		t2 = (300, 0)
+		t3 = (0, 500)
+		t4 = (300, 500)
 
 		'''
 		cv2.circle(frame, tl, 5, (0, 0, 255), -1)
@@ -101,9 +116,14 @@ while True:
 
 		matrix = cv2.getPerspectiveTransform(pts1, pts2)
 
+<<<<<<< HEAD:scripts/playvideo.py
 		result = cv2.warpPerspective(frame, matrix, (maxWidth, maxHeight))
 
 		cv2.imshow('Pre-label', result)
+=======
+		# result = cv2.warpPerspective(frame, matrix, (maxWidth, maxHeight))
+		result = cv2.warpPerspective(frame, matrix, (300, 500))
+>>>>>>> fc7ca01caadaa95cb8751bf3bf710ad54a460c55:playvideo.py
 
 		frame_count += 1
 		if frame_count > fps:
